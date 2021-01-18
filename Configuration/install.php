@@ -58,16 +58,16 @@ if(!empty($_POST)){
 
                         // Save the file
 
-                        if(@$config_file = fopen(SSF_ABSPATH."/Configuration/SkyMakeAPIConfiguration.php","a+")){
+                        if(@$config_file = fopen(API_ABSPATH."/Configuration/SkyMakeAPIConfiguration.php","a+")){
 
                             // Save the buffer to the file
                             @fwrite($config_file,$config_temp_text);
 
                             // Check if we have the file
-                            if(file_exists(SSF_ABSPATH."/Configuration/SkyMakeAPIConfiguration.php")){
+                            if(file_exists(API_ABSPATH."/Configuration/SkyMakeAPIConfiguration.php")){
 
                                 // We have the file, now include it to create the first user
-                                include_once SSF_ABSPATH."/Configuration/SecureFormDatabaseConfiguration.php";
+                                include_once API_ABSPATH."/Configuration/SkyMakeAPIConfiguration.php";
 
                                     $success = true;
                                     $wizard_title = "Install Successfully Completed";
