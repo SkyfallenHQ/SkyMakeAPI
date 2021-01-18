@@ -31,8 +31,7 @@ include_once API_ABSPATH . "/API-Includes/API_Header.php";
 include_once API_ABSPATH . "/API-Includes/Router.php";
 
 // Include the router file to route the URLs
-include_once API_ABSPATH . "/router.php";
+include_once API_ABSPATH . "/endpoints.php";
 
 // Push the API Response
-
 include_once API_ABSPATH . "/API-Includes/API_Push.php";
