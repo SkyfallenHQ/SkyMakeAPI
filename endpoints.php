@@ -1,5 +1,4 @@
 <?php
-
 /***********************************************************************************/
 /*                          (C) 2020 - Skyfallen                                   */
 /*                          Skyfallen SkyMake API                                  */
@@ -9,7 +8,7 @@
 /***********************************************************************************/
 
 // Check if our ABSPATH is defined
-defined("SSF_ABSPATH") or die("Don't mess!");
+defined("API_ABSPATH") or die("Don't mess!");
 
 // Start routing all urls
 
@@ -17,6 +16,6 @@ defined("SSF_ABSPATH") or die("Don't mess!");
 if (!defined("ROUTED")) {
 
     // Include the 404 Page.
-    include_once SSF_ABSPATH . "/API-Includes/NullRequest.php";
+    include_once API_ABSPATH . "/API-Includes/NullRequest.php";
 
 }
