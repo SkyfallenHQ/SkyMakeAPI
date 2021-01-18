@@ -1,0 +1,43 @@
+<?php
+/***********************************************************************************/
+/*                          (C) 2021 - Skyfallen                                   */
+/*                          Skyfallen SkyMake API                                  */
+/*                          The Skyfallen Company                                  */
+/*                                                                                 */
+/*      This file stores the database configuration for the application.           */
+/*  This file should be modified by the user according to their configuration.     */
+/*               SkyMake API only works with MYSQL Databases.                      */
+/*       Rename this file to SkyMakeAPIConfiguration.php after editing             */
+/***********************************************************************************/
+
+
+
+
+// Start editing here. You can't edit all of the file.
+// Replace the following definitions with your own data.
+
+
+// Define the database name
+define("SKYMAKEAPI_DBNAME","db_name_here");
+
+// Define the user with access to this database
+// MYSQL Username
+define("SKYMAKEAPI_DBUSER","db_user_here");
+// MYSQL Password
+define("SKYMAKEAPI_DBPASSWORD","db_password_here");
+
+// Define the MYSQL Server, this is generally localhost, meaning the database is on the same server.
+define("SKYMAKEAPI_DBSERVER","db_server_here");
+
+// Stop editing here. Rest of this file is the source code.
+
+// Attempt to connect to the SQL Server
+$connection = new mysqli(SKYMAKEAPI_DBSERVER,SKYMAKEAPI_DBUSER,SKYMAKEAPI_DBPASSWORD,SKYMAKEAPI_DBNAME,3306);
+
+// Check if connection has failed
+if($connection->connect_error){
+    // Connection Failed. Stop execution.
+    die("Database Connection Failed. ".$connection->connect_error);
+}
+
+// EOF
