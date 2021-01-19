@@ -24,8 +24,14 @@ if ((@include_once API_ABSPATH . "/Configuration/SkyMakeAPIConfiguration.php") =
     die();
 }
 
+// Do CSC Check
+include_once API_ABSPATH . "/CreateServerConfig.php";
+
 // Start the API Headers
 include_once API_ABSPATH . "/API-Includes/API_Header.php";
+
+// Include the authorisation system
+include_once API_ABSPATH . "/API-Includes/API_Authorisation.php";
 
 // Include all the classes
 include_once API_ABSPATH . "/API-Includes/Router.php";
