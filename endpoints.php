@@ -10,7 +10,19 @@
 // Check if our ABSPATH is defined
 defined("API_ABSPATH") or die("Don't mess!");
 
+// Define the request
+if(isset($_GET["path"])){
+    define("REQUEST",$_GET["path"]);
+} else {
+    define("REQUEST","/");
+}
+
 // Start routing all urls
+include_once API_ABSPATH . "/API-Functions/getUserRole.php";
+Router::routePage("getUserRole","getUserRole");
+
+include_once API_ABSPATH . "/API-Functions/getAssignedCourses.php";
+Router::routePage("getAssignedCourses","getAssignedCourses");
 
 // If nothing was routed, display 404
 if (!defined("ROUTED")) {
