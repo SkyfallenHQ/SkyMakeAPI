@@ -14,6 +14,6 @@ defined("API_ABSPATH") or die("Don't mess!");
 global $response;
 
 // Add the error message
-$response["status"]["code"] = 404;
+$response["status"]["code"] = "404";
 $response["status"]["message"] = "Not Found.";
 $response["error"]["description"] = "The requested API Endpoint does not exist.";
