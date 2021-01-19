@@ -29,6 +29,9 @@ define("SKYMAKEAPI_DBPASSWORD","db_password_here");
 // Define the MYSQL Server, this is generally localhost, meaning the database is on the same server.
 define("SKYMAKEAPI_DBSERVER","db_server_here");
 
+// Define the WEB_URL of your SkyMake Installation
+define("SKYMAKE_INSTALL", "https://app.deducated.com");
+
 // Stop editing here. Rest of this file is the source code.
 
 // Attempt to connect to the SQL Server
