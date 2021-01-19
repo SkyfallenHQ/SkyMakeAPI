@@ -10,26 +10,12 @@ class Router
      * Routes a specific path to a function
      * @param String $path The path to route
      * @param String $func The function to route to
-     * @param Boolean $requireLogin Do we need to login to access this page
-     * @param String $fallbackfunc The function to route to if we are not logged in
      */
-    public static function routePage($path, $func, $requireLogin = false, $fallbackfunc = "null")
+    public static function routePage($path, $func)
     {
-        if ($requireLogin) {
-            if (REQUEST == $path or REQUEST == $path . "/") {
-                if (ISLOGGEDIN) {
-                    define("ROUTED", true);
-                    $func();
-                } else {
-                    define("ROUTED", true);
-                    $fallbackfunc();
-                }
-            }
-        } else {
-            if (REQUEST == $path or REQUEST == $path . "/") {
-                define("ROUTED", true);
-                $func();
-            }
+        if (REQUEST == $path or REQUEST == $path . "/") {
+            define("ROUTED", true);
+            $func();
         }
     }
 
@@ -38,10 +24,9 @@ class Router
      * @param String $prefix Prefix to look for
      * @param String $func Function to redirect to
      * @param Boolean $noEndTrailingSlash Remove trailing slash from the remaining path
-     * @param Boolean $requireLogin Decides whether user should be logged in to view this page
      * @param String $fallbackfunc What to do if user is not logged in, name of a function
      */
-    public static function routePrefix($prefix, $func, $noEndTrailingSlash = false, $requireLogin = false, $fallbackfunc = "null")
+    public static function routePrefix($prefix, $func, $noEndTrailingSlash = false)
     {
         if (substr(REQUEST, 0, strlen($prefix) + 1) == $prefix . "/") {
             $remainingPath = "";
@@ -52,16 +37,5 @@ class Router
             define("ROUTED", true);
             $func($remainingPath);
         }
-    }
-
-    /**
-     * Renders a static html page
-     * @param String $filename Name of the html file without extension
-     * @param String $dir The directory that html file exist inside. Defaults to 'static/html'
-     */
-
-    public static function render_html($filename, $dir = "static/html")
-    {
-        include SSF_ABSPATH . "/" . $dir . "/" . $filename . ".html";
     }
 }
